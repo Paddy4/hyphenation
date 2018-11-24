@@ -1,3 +1,3 @@
 # hyphenation
-Worttrennug anhand eines Wörterbuchs 
+Worttrennung anhand eines Wörterbuchs 
 
