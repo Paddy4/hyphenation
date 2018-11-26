@@ -12,7 +12,7 @@ public class TestProgram extends Dictionary {
 
         String a = "Donaudampfschiffskapitäns";
         String b = "Anwaltsbüro";
-        String c = "Olivenöl";
+
         URLConnection connection = new URL("https://raw.githubusercontent.com/TYPO3-extensions/solr/master/Resources/Solr/typo3cores/conf/german/german-common-nouns.txt").openConnection();
         Scanner scannerEingabe = new Scanner(connection.getInputStream());
         HashSet<String> data = new HashSet<>();
