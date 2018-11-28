@@ -4,29 +4,40 @@ import java.util.*;
 
 public class Dictionary {
 
-    public static String [] hyphenationapi(String text, Set<String> dictionary) {
+    public static String[] hyphenationapi(String text, Set<String> dictionary) {
         text = text.toLowerCase();
         int end = text.length();
         List<String> result = new ArrayList<>();
-
             for (int j = 0; j <= 5; j++) {
                 for (int i = 0; i <= end; i++) {
                     String word = text.substring(i, end);
                     if (dictionary.contains(word)) {
                         end = i;
                         result.add(word);
+
+                }
+            }
+        }
+            if (result.size() == 1) {
+                if (text.charAt(text.length() - 1) != 's') {
+                    String it = "s";
+                    text = text + it;
+                    int s = text.length();
+                    for(int j=0;j<=2;j++){
+                        for (int i = 0; i <= s; i++) {
+                            String word = text.substring(i, s);
+                            if (dictionary.contains(word)) {
+                                s = i;
+                                result.add(word);
+                        }
+                      }
                     }
                 }
             }
-            if (result.size() == 0) {
-                System.out.println("Ihr Wort konnte nicht gefunden werden");
-                System.out.println("Hängen Sie bitte ein 's' am Ende des Wortes an");
-            }
-            Collections.reverse(result);
-            return result.toArray(new String[result.size()]);
-        }
 
-
+        Collections.reverse(result);
+        return result.toArray(new String[result.size()]);
+    }
 
     public static void cornercase(String[] array){
         int start = 0;
